@@ -1,0 +1,25 @@
+{
+  "name": "rmqlite",
+  "version": "0.0.1",
+  "description": "Lite lib for RabbitMQ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rabbitmq",
+    "RabbitMQ",
+    "AMQP",
+    "lite"
+  ],
+  "author": "Kealman",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.4.0",
+    "co": "^4.6.0",
+    "lodash": "^4.0.1"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.4.0"
+  }
+}
