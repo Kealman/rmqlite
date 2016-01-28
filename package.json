@@ -21,5 +21,13 @@
   },
   "devDependencies": {
     "jsdoc": "^3.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kealman/rmqlite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kealman/rmqlite/issues"
+  },
+  "homepage": "https://github.com/Kealman/rmqlite#readme"
 }
