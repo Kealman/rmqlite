@@ -1,5 +1,24 @@
+
 <a name="module_RabbitMQ"></a>
 ## RabbitMQ
+
+```javascript
+const RabbitMQ = require('rmqlite')('amqp://localhost');
+RabbitMQ.on('close', function(){
+   console.log('Reconnect after 2 second');
+   setTimeout(RabbitMQ.reconnect, 2000);
+});
+
+let queue = new RabbitMQ('', 'test_queue', {autoDelete: true});
+
+queue.subscribe(function(message){
+   console.log(message.toJSON());
+   message.ack();
+}, true);
+
+queue.publish({test: 'test'});
+```
+
 
 * [RabbitMQ](#module_RabbitMQ)
     * [~Message](#module_RabbitMQ..Message)
