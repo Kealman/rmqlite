@@ -1,24 +1,5 @@
-
 <a name="module_RabbitMQ"></a>
 ## RabbitMQ
-
-```javascript
-const RabbitMQ = require('rmqlite')('amqp://localhost');
-RabbitMQ.on('close', function(){
-   console.log('Reconnect after 2 second');
-   setTimeout(RabbitMQ.reconnect, 2000);
-});
-
-let queue = new RabbitMQ('', 'test_queue', {autoDelete: true});
-
-queue.subscribe(function(message){
-   console.log(message.toJSON());
-   message.ack();
-}, true);
-
-queue.publish({test: 'test'});
-```
-
 
 * [RabbitMQ](#module_RabbitMQ)
     * [~Message](#module_RabbitMQ..Message)
@@ -89,12 +70,14 @@ Ack message
 <a name="new_module_RabbitMQ..RabbitMQ_new"></a>
 #### new RabbitMQ(exchanger, queue, [queueOptions], [exchangerOptions])
 
-| Param | Type | Description |
-| --- | --- | --- |
-| exchanger | <code>string</code> | exchanger name |
-| queue | <code>string</code> | queue name |
-| [queueOptions] | <code>object</code> | queue options [| see this](http://www.squaremobius.net/amqp.node/channel_api.html#channel-assertqueue) |
-| [exchangerOptions] | <code>object</code> | exchange options [| see this](http://www.squaremobius.net/amqp.node/channel_api.html#channel-assertexchange) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| exchanger | <code>string</code> |  | exchanger name |
+| queue | <code>string</code> |  | queue name |
+| [queueOptions] | <code>object</code> |  | queue options [| see this](http://www.squaremobius.net/amqp.node/channel_api.html#channel-assertqueue) |
+| [queueOptions.bind] | <code>boolean</code> | <code>true</code> | bind to exchanger by queue name |
+| [queueOptions.assert] | <code>boolean</code> | <code>true</code> | assert queue |
+| [exchangerOptions] | <code>object</code> |  | exchange options [| see this](http://www.squaremobius.net/amqp.node/channel_api.html#channel-assertexchange) |
 
 <a name="module_RabbitMQ..RabbitMQ+subscribe"></a>
 #### rabbitMQ.subscribe(callback, [ack], [options]) ⇒ <code>Promise</code>
