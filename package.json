@@ -1,6 +1,6 @@
 {
   "name": "rmqlite",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "Lite lib for RabbitMQ",
   "main": "index.js",
   "scripts": {
